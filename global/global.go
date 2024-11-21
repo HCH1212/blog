@@ -1,7 +1,7 @@
 package global
 
 import (
-	"github.com/HCH1212/blog/blog_server/config"
+	"blog/config"
 	"github.com/sirupsen/logrus"
 	"gorm.io/gorm"
 )

@@ -1,7 +1,6 @@
 package config
 
 import (
-	"blog/global"
 	"fmt"
 	"gopkg.in/yaml.v3"
 	"io/ioutil"
@@ -15,8 +14,8 @@ type Config struct {
 }
 
 // InitConf 读取yaml文件的配置
-func InitConf() {
-	const ConfigFile = "setting.yaml"
+func InitConf() *Config {
+	const ConfigFile = "config.yaml"
 	c := &Config{}
 	yamlConf, err := ioutil.ReadFile(ConfigFile)
 	if err != nil {
@@ -27,5 +26,5 @@ func InitConf() {
 		log.Fatalln(fmt.Errorf("yaml Unmarshal err:%v", err))
 	}
 	log.Println("config yamlFile load init success")
-	global.Config = c
+	return c
 }
