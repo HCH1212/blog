@@ -1,8 +1,11 @@
 // 系统管理
 package api
 
-import "github.com/gin-gonic/gin"
+import (
+	"blog/resp"
+	"github.com/gin-gonic/gin"
+)
 
 func Info(c *gin.Context) {
-	c.JSON(200, gin.H{"mes": "1111"})
+	resp.Success(c, "1111111111", nil)
 }
