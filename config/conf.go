@@ -11,6 +11,8 @@ type Config struct {
 	System System `yaml:"system"`
 	Mysql  Mysql  `yaml:"mysql"`
 	Logger Logger `yaml:"logger"`
+	QiNiu  QiNiu  `yaml:"qi_niu"`
+	Upload Upload `yaml:"upload"`
 }
 
 // InitConf 读取yaml文件的配置

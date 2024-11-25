@@ -2,6 +2,7 @@ package dao
 
 import (
 	"blog/global"
+	"blog/model"
 	"gorm.io/driver/mysql"
 	"gorm.io/gorm"
 	"gorm.io/gorm/logger"
@@ -29,6 +30,11 @@ func InitMysql() {
 	if err != nil {
 		global.Log.Fatalln("mysql连接失败", err)
 	}
+
+	_ = db.AutoMigrate(
+		&model.Image{},
+	)
+
 	sqlDB, _ := db.DB()
 	sqlDB.SetMaxIdleConns(10)               // 最大空闲连接数
 	sqlDB.SetMaxOpenConns(100)              // 最大可容纳

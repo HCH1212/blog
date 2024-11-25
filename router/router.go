@@ -10,7 +10,10 @@ func InitRouter() {
 	gin.SetMode(global.Config.System.Env)
 	router := gin.Default()
 
-	router.GET("/", api.Info)
+	i := router.Group("image")
+	{
+		i.POST("/update", api.ImageUpdate)
+	}
 
 	addr := global.Config.System.Addr()
 	global.Log.Infof("blog server run at %s", addr)
