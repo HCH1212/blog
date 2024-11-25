@@ -27,7 +27,7 @@ func InitMysql() {
 		Logger: mysqlLogger,
 	})
 	if err != nil {
-		global.Log.Fatalln("mysql连接失败")
+		global.Log.Fatalln("mysql连接失败", err)
 	}
 	sqlDB, _ := db.DB()
 	sqlDB.SetMaxIdleConns(10)               // 最大空闲连接数

@@ -1,0 +1,12 @@
+services:
+  mysql:
+    image: 'mysql:8.0.39'
+    ports:
+      - "3306:3306"
+    environment:
+      - MYSQL_DATABASE=gomall
+      - MYSQL_ROOT_PASSWORD=041212
+  redis:
+    image: 'redis:7.0.15'
+    ports:
+      - "6379:6379"
