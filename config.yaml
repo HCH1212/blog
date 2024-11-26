@@ -8,6 +8,7 @@ mysql:
   db: blog
   user: root
   password: 041212
+  config: "charset=utf8mb4&parseTime=True&loc=Local"
   log_level: dev
 logger:
   level: info
@@ -32,7 +33,7 @@ qi_niu:
   size: 5
 upload:
   size: 2
-  path: uploads
+  path: static/images
   suffix: # 白名单
     - .jpg
     - .jpeg
@@ -40,3 +41,6 @@ upload:
     - .gif
     - .webp
     - .pdf
+jwt:
+  access_key: "i love you"
+  refresh_key: "forever"

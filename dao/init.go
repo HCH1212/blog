@@ -32,7 +32,7 @@ func InitMysql() {
 	}
 
 	_ = db.AutoMigrate(
-		&model.Image{},
+		&model.User{},
 	)
 
 	sqlDB, _ := db.DB()

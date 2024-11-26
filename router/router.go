@@ -9,10 +9,15 @@ import (
 func InitRouter() {
 	gin.SetMode(global.Config.System.Env)
 	router := gin.Default()
+	router.GET("/", func(c *gin.Context) {
+		c.JSON(200, "111")
+	})
 
-	i := router.Group("image")
+	r := router.Group("/user")
 	{
-		i.POST("/update", api.ImageUpdate)
+		r.POST("/register", api.Register)          // 注册
+		r.POST("/login", api.Login)                // 登陆
+		r.POST("/refresh_token", api.RefreshToken) // refreshToken刷新token
 	}
 
 	addr := global.Config.System.Addr()

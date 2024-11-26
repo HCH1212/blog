@@ -13,11 +13,13 @@ type Config struct {
 	Logger Logger `yaml:"logger"`
 	QiNiu  QiNiu  `yaml:"qi_niu"`
 	Upload Upload `yaml:"upload"`
+	JWT    JWT    `yaml:"jwt"`
 }
+
+const ConfigFile = "config.yaml"
 
 // InitConf 读取yaml文件的配置
 func InitConf() *Config {
-	const ConfigFile = "config.yaml"
 	c := &Config{}
 	yamlConf, err := ioutil.ReadFile(ConfigFile)
 	if err != nil {
