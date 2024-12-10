@@ -50,7 +50,6 @@ func RefreshTokenService(refreshToken string) (string, string, error) {
 	}
 	var user model.User
 	user.ID = res.ID
-	user.Power = res.Power
 	accessToken, refreshToken, err := utils.GetToken(&user)
 	if err != nil {
 		global.Log.Error(err.Error())

@@ -13,8 +13,7 @@ import (
 //var refreshTokenKey = []byte(global.Config.JWT.RefreshKey)
 
 type Claims struct {
-	ID    uint
-	Power int
+	ID uint
 	jwt.RegisteredClaims
 }
 
@@ -28,8 +27,7 @@ func GetToken(user *model.User) (string, string, error) {
 	refreshTokenTime := time.Now().Add(4 * 7 * 24 * time.Hour)
 
 	accessClaims := Claims{
-		ID:    user.ID,
-		Power: user.Power,
+		ID: user.ID,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(accessTokenTime),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
@@ -38,8 +36,7 @@ func GetToken(user *model.User) (string, string, error) {
 		},
 	}
 	refreshClaims := Claims{
-		ID:    user.ID,
-		Power: user.Power,
+		ID: user.ID,
 		RegisteredClaims: jwt.RegisteredClaims{
 			ExpiresAt: jwt.NewNumericDate(refreshTokenTime),
 			IssuedAt:  jwt.NewNumericDate(time.Now()),
