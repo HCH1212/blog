@@ -1,0 +1,13 @@
+mysql:
+  dsn: "%s:%s@tcp(127.0.0.1:3306)/%s?charset=utf8mb4&parseTime=True&loc=Local"
+
+redis:
+  address: "127.0.0.1:6379"
+  password: ""
+  db: 0
+
+qiniu:
+  access_key: ""
+  secret_key: ""
+  bucket: ""
+  domain: ""

@@ -1,0 +1,197 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 全屏背景图 */
+body {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://tuchuang.hch1212.online/aila/aila3.png') center/cover fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部导航栏 */
+.navbar {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #66ccff;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+}
+
+.search-box button {
+    padding: 0.5rem 1.5rem;
+    background: rgba(102, 204, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: rgba(102, 204, 255, 1);
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1;
+    padding: 8rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 页面整体布局 */
+#add-article-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* 表单容器 */
+.form-container {
+    width: 90%;
+    max-width: 600px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* 标题 */
+.form-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #bbb;
+}
+
+/* 表单元素 */
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: block;
+    color: #888; /* 变灰色 */
+}
+
+input, textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    background: transparent; /* 背景透明 */
+    color: #fff; /* 文字颜色调整以适配背景 */
+}
+
+input:focus, textarea:focus {
+    border-color: #bbb;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* 响应式优化 */
+@media (max-width: 600px) {
+    .form-container {
+        width: 95%;
+        padding: 15px;
+    }
+}
+
+.btn {
+    background: linear-gradient(to right,#65CBF7,#B3A5FC);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, .6);
+    color: #9C3493;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    height: 46px;
+    line-height: 46px;
+    width: 100%;
+    font-size: 18px;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #B3A5FC, #65CBF7);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, .8);
+    transform: scale(1.05);
+}
+
+/* 底部 */
+.footer {
+    background: rgba(40, 40, 40, 0.9);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    backdrop-filter: blur(5px);
+}
+
+.github-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-link:hover {
+    color: #66ccff;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ErrorのBlog</title>
+    <link rel="stylesheet" href="../css/article.css">
+</head>
+<body>
+<!-- 顶部导航 -->
+<nav class="navbar">
+    <a href="index.html" class="logo">error の blog</a>
+    <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="tags.html">标签分类</a>
+        <a href="bed.html">图床</a>
+        <a href="aila.html">艾拉</a>
+        <a href="login.html" id="login-link">登录</a>
+        <a href="index.html" id="logout-link" style="display: none;">退出登录</a>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="搜索文章...">
+        <button>搜索</button>
+    </div>
+</nav>
+
+<!-- 主要内容 -->
+<main class="main-content">
+    <section id="add-article-section">
+        <div class="form-container">
+            <h2>新增文章</h2>
+            <form id="add-article-form">
+                <div class="form-group">
+                    <label for="article-title">标题</label>
+                    <input type="text" id="article-title" placeholder="请输入文章标题" required>
+                </div>
+                <div class="form-group">
+                    <label for="article-content">内容</label>
+                    <textarea id="article-content" rows="10" placeholder="请输入文章内容" required></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="article-tags">标签</label>
+                    <input type="text" id="article-tags" placeholder="请输入标签，用逗号分隔">
+                </div>
+<!--                <div class="form-group">-->
+<!--                    <label for="article-cover">封面图片 URL</label>-->
+<!--                    <input type="url" id="article-cover" placeholder="请输入封面图片的 URL">-->
+<!--                </div>-->
+                <button type="submit" class="btn">发布文章</button>
+                <a href="index.html" class="btn">返回</a>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- 底部 -->
+<footer class="footer">
+    <a href="https://github.com/HCH1212" class="github-link" target="_blank">
+        @GitHub
+    </a>
+</footer>
+<script src="../js/article.js"></script>
+</body>
+</html>

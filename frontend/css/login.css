@@ -1,0 +1,174 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* 全屏背景图 */
+body {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://tuchuang.hch1212.online/aila/aila3.png') center/cover fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部导航栏 */
+.navbar {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #66ccff;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+}
+
+.search-box button {
+    padding: 0.5rem 1.5rem;
+    background: rgba(102, 204, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: rgba(102, 204, 255, 1);
+}
+.box {
+    width: 950px;
+    height: 450px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .8);
+    display: flex;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-sizing: border-box;
+    padding: 20px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+}
+
+.left>img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.right {
+    width: 35%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+h1 {
+    color: #fff;
+    text-align: center;
+    margin-top: 45px;
+}
+
+p {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.inputItem {
+    height: 44px;
+    padding: 0;
+    padding-left: 8px;
+    border: none;
+    background: #fff;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+}
+
+.inputItem:hover {
+    height: 44px;
+    padding: 0;
+    padding-left: 8px;
+    /*border: none;*/
+    background: #fff;
+    outline: none;
+    width: 100%;
+    font-size: 16px;
+    margin-top: 20px;
+    border: 1px solid white;
+}
+
+.btn {
+    background: linear-gradient(to right,#65CBF7,#B3A5FC);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, .6);
+    color: #9C3493;
+    font-weight: bold;
+    border: none;
+    border-radius: 30px;
+    height: 46px;
+    width: 100%;
+    font-size: 18px;
+    display: block;
+    margin: auto;
+    margin-top: 25px;
+}
+
+.btn:hover {
+    background: linear-gradient(to right, #B3A5FC, #65CBF7);
+    box-shadow: 0 8px 20px rgba(255, 255, 255, .8);
+    transform: scale(1.05);
+}
+
+.box .right a {
+    text-align: center;
+    height: 46px;
+    line-height: 46px;
+    text-decoration: none;
+    font-size: 18px;
+}

@@ -1,0 +1,202 @@
+/* 基础重置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* 全屏背景图 */
+body {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+    url('https://tuchuang.hch1212.online/aila/aila3.png') center/cover fixed;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 顶部导航栏 */
+.navbar {
+    background: rgba(40, 40, 40, 0.9);
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(5px);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #66ccff;
+}
+
+.search-box {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.search-box input {
+    padding: 0.5rem 1rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 20px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    outline: none;
+}
+
+.search-box button {
+    padding: 0.5rem 1.5rem;
+    background: rgba(102, 204, 255, 0.8);
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.search-box button:hover {
+    background: rgba(102, 204, 255, 1);
+}
+
+/* 主要内容区域 */
+.main-content {
+    flex: 1;
+    padding: 8rem 2rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* 文章卡片 */
+.article-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s;
+}
+
+.article-card:hover {
+    transform: translateY(-5px);
+}
+
+.article-title {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.article-content{
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.article-meta{
+    color: #bbb;
+    line-height: 1.5;
+    margin-bottom: 1rem;
+    font-size: 14px;
+}
+
+.article-tags span {
+    display: inline-block;
+    background: rgba(102, 204, 255, 0.2);
+    color: #66ccff;
+    padding: 0.3rem 0.8rem;
+    border-radius: 15px;
+    margin-right: 0.5rem;
+    font-size: 0.85rem;
+}
+
+/* 新增文章按钮样式 */
+.add-article {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.add-article a {
+    display: block; /* 设置为块级元素 */
+    width: 100%; /* 宽度填充父容器 */
+    height: 100%; /* 高度填充父容器 */
+    text-align: center; /* 内容居中 */
+    font-size: 2rem; /* 加大 ➕号 */
+    color: #666; /* 灰色 */
+    position: absolute; /* 绝对定位，覆盖整个父容器 */
+    top: 10px;
+    left: 0;
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+    gap: 5px;
+}
+
+.page-numbers {
+    display: flex;
+    gap: 5px;
+}
+
+.pagination button {
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.pagination button.active {
+    background-color: #007bff;
+    color: white;
+}
+
+#page-info {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* 底部 */
+.footer {
+    background: rgba(40, 40, 40, 0.9);
+    text-align: center;
+    padding: 1.5rem;
+    margin-top: auto;
+    backdrop-filter: blur(5px);
+}
+
+.github-link {
+    color: rgba(255, 255, 255, 0.8);
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.github-link:hover {
+    color: #66ccff;
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>标签分类 - ErrorのBlog</title>
+    <link rel="stylesheet" href="../css/tags.css">
+</head>
+<body>
+
+<!-- 顶部导航 -->
+<nav class="navbar">
+    <a href="index.html" class="logo">error の blog</a>
+    <div class="nav-links">
+        <a href="index.html">首页</a>
+        <a href="tags.html">标签分类</a>
+        <a href="bed.html">图床</a>
+        <a href="aila.html">艾拉</a>
+        <a href="login.html" id="login-link">登录</a>
+        <a href="index.html" id="logout-link" style="display: none;">退出登录</a>
+    </div>
+    <div class="search-box">
+        <input type="text" placeholder="搜索文章...">
+        <button>搜索</button>
+    </div>
+</nav>
+
+<!-- 主要内容 -->
+<main class="main-content">
+    <h2>标签分类</h2>
+    <p>这里是所有文章的分类标签，点击可查看相关内容。</p>
+    <div class="tag-list" id="tag-list"></div>
+    <div id="article-list"></div>
+</main>
+
+<!-- 底部 -->
+<footer class="footer">
+    <a href="https://github.com/HCH1212" class="github-link" target="_blank">
+        @GitHub
+    </a>
+</footer>
+<script src="../js/tags.js"></script>
+</body>
+</html>
