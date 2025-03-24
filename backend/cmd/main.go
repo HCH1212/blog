@@ -12,4 +12,5 @@ func main() {
 	log.InitDefaultLogger("[blog]") // 日志初始化
 	dao.Init()
 	router.Init()
+
 }
