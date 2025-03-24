@@ -280,3 +280,88 @@ function goToPage(page) {
 
 // 在页面加载完成后调用 initPagination 函数
 document.addEventListener('DOMContentLoaded', initPagination);
+
+// 搜索功能
+document.addEventListener('DOMContentLoaded', () => {
+    const searchInput = document.querySelector('.search-box input');
+    const searchButton = document.querySelector('.search-box button');
+    const modal = document.getElementById('search-result-modal');
+    const closeBtn = document.querySelector('.close');
+    const resultList = document.getElementById('search-result-list');
+
+    searchButton.addEventListener('click', async () => {
+        const keyword = searchInput.value.trim();
+        if (keyword === '') {
+            alert('请输入搜索关键词');
+            return;
+        }
+
+        try {
+            const response = await fetch(`http://localhost:8888/article/search?q=${encodeURIComponent(keyword)}`);
+            if (!response.ok) {
+                throw new Error('搜索文章失败');
+            }
+            const data = await response.json();
+            resultList.innerHTML = '';
+
+            if (data.status === 2000) {
+                const articles = data.data;
+                if (articles.length === 0) {
+                    const noResultMsg = document.createElement('p');
+                    noResultMsg.textContent = '未找到相关文章';
+                    resultList.appendChild(noResultMsg);
+                } else {
+                    articles.forEach(article => {
+                        const articleDiv = document.createElement('div');
+                        articleDiv.classList.add('article-item');
+                        articleDiv.style.cursor = 'pointer';
+
+                        const title = document.createElement('h3');
+                        title.textContent = article.title;
+
+                        const content = document.createElement('p');
+                        let displayContent = article.content;
+                        if (displayContent.length > 25) {
+                            displayContent = displayContent.slice(0, 25) + '...';
+                        }
+                        content.textContent = displayContent;
+
+                        articleDiv.appendChild(title);
+                        articleDiv.appendChild(content);
+
+                        // 为文章添加点击事件
+                        articleDiv.addEventListener('click', () => {
+                            window.location.href = `article_one.html?id=${article.ID}`;
+                        });
+
+                        resultList.appendChild(articleDiv);
+                    });
+                }
+                // 显示模态框
+                modal.style.display = 'block';
+            } else {
+                console.error('搜索文章失败:', data.message);
+                const errorMsg = document.createElement('p');
+                errorMsg.textContent = '搜索文章失败，请稍后重试';
+                resultList.appendChild(errorMsg);
+            }
+        } catch (error) {
+            console.error('请求失败:', error);
+            const errorMsg = document.createElement('p');
+            errorMsg.textContent = '请求失败，请稍后重试';
+            resultList.appendChild(errorMsg);
+        }
+    });
+
+    // 关闭模态框
+    closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+    });
+
+    // 点击模态框外部关闭模态框
+    window.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
+});
