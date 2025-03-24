@@ -143,21 +143,21 @@ body {
 }
 
 #edit-article-btn {
-    background-color: #4CAF50;
+    background-color: #80ce72;
     color: white;
 }
 
 #edit-article-btn:hover {
-    background-color: #45a049;
+    background-color: #76e97b;
 }
 
 #delete-article-btn {
-    background-color: #f44336;
+    background-color: #c1706b;
     color: white;
 }
 
 #delete-article-btn:hover {
-    background-color: #d32f2f;
+    background-color: #ed6f6f;
 }
 
 /* 编辑模式下的样式 */
