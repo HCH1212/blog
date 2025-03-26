@@ -3,7 +3,7 @@ package service
 import (
 	"context"
 	"github.com/HCH1212/blog/backend/ai"
-	"github.com/sirupsen/logrus"
+	"time"
 )
 
 func ChatService(ctx context.Context, content string) (string, error) {
@@ -13,6 +13,8 @@ func ChatService(ctx context.Context, content string) (string, error) {
 		return "", err
 	}
 
+	ctx, cancel := context.WithTimeout(ctx, 30*time.Second)
+	defer cancel()
 	// 创建llm
 	//llm, err := ai.CreateOllamaChatModel(ctx)
 	//if err != nil {
@@ -20,7 +22,6 @@ func ChatService(ctx context.Context, content string) (string, error) {
 	//}
 	llm, err := ai.CreateOpenAIChatModel(ctx)
 	if err != nil {
-		logrus.Info(err.Error())
 		return "", err
 	}
 

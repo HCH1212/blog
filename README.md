@@ -21,7 +21,7 @@
 
 ### ai功能添加
 1. 本地ollama拉取
-2. openai的api
+2. openai的api(请自行配置环境变量)
 <br>详见backend/ai文件夹代码
 
 ### 用户分类
