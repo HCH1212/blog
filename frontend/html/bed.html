@@ -28,7 +28,7 @@
 <!-- 主要内容 -->
 <main class="main-content">
     <h2>图床</h2>
-    <p>上传并管理你的图片。</p>
+    <p>上传你的图片以获取url</p>
     <input type="file" id="image-upload" accept="image/*">
     <button onclick="uploadImage()">上传</button>
     <div id="image-preview"></div>
@@ -40,21 +40,6 @@
         @GitHub
     </a>
 </footer>
-
-<script>
-    function uploadImage() {
-        const fileInput = document.getElementById('image-upload');
-        if (fileInput.files.length > 0) {
-            const img = document.createElement('img');
-            img.src = URL.createObjectURL(fileInput.files[0]);
-            img.style.maxWidth = '300px';
-            document.getElementById('image-preview').innerHTML = '';
-            document.getElementById('image-preview').appendChild(img);
-        } else {
-            alert('请选择图片！');
-        }
-    }
-</script>
 <script src="../js/bed.js"></script>
 </body>
 </html>
